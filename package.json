@@ -7,11 +7,6 @@
     "trackballcontrols",
     "browser"
   ],
-  "author": {
-    "name": "Vasco Asturiano",
-    "url": "http://bl.ocks.org/vasturiano"
-  },
-  "license": "GPL-3.0",
   "main": "index.js",
   "homepage": "https://github.com/vasturiano/three-trackballcontrols-web",
   "repository": {
@@ -20,7 +15,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && mkdir dist && browserify index.js -o dist/three-trackballcontrols.js -s TrackballControls",
-    "minify": "uglifyjs dist/three-trackballcontrols.js -o dist/three-trackballcontrols.min.js -c -m --preamble \"$(preamble)\"",
+    "minify": "uglifyjs dist/three-trackballcontrols.js -o dist/three-trackballcontrols.min.js -c -m",
     "prepublish": "npm run build && npm run minify"
   },
   "dependencies": {
@@ -28,7 +23,6 @@
   },
   "devDependencies": {
     "browserify": "^13",
-    "package-preamble": "^0.0.2",
     "uglify-js": "^2.7"
   }
 }
