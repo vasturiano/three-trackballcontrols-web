@@ -1,0 +1,34 @@
+{
+  "name": "three-trackballcontrols-web",
+  "version": "0.0.1",
+  "description": "A browser friendly wrapper of the three-trackballcontrols module.",
+  "keywords": [
+    "three",
+    "trackballcontrols",
+    "browser"
+  ],
+  "author": {
+    "name": "Vasco Asturiano",
+    "url": "http://bl.ocks.org/vasturiano"
+  },
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "homepage": "https://github.com/vasturiano/three-trackballcontrols-web",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vasturiano/three-trackballcontrols-web.git"
+  },
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && browserify index.js -o dist/three-trackballcontrols.js -s TrackballControls",
+    "minify": "uglifyjs dist/three-trackballcontrols.js -o dist/three-trackballcontrols.min.js -c -m --preamble \"$(preamble)\"",
+    "prepublish": "npm run build && npm run minify"
+  },
+  "dependencies": {
+    "three-trackballcontrols": "~0.0.5"
+  },
+  "devDependencies": {
+    "browserify": "^13",
+    "package-preamble": "^0.0.2",
+    "uglify-js": "^2.7"
+  }
+}
